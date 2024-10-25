@@ -1,7 +1,7 @@
+stop = 0
 hummingbird.start_hummingbird()
 
 def on_forever():
-    stop = 0
     if not (input.button_is_pressed(Button.A)) or stop == 1:
         hummingbird.set_position_servo(FourPort.ONE, 90)
         basic.pause(500)
@@ -10,6 +10,7 @@ def on_forever():
 basic.forever(on_forever)
 
 def on_forever2():
+    global stop
     if input.button_is_pressed(Button.A):
-        stop2 = 1
+        stop = 1
 basic.forever(on_forever2)
