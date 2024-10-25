@@ -11,7 +11,7 @@ basic.forever(function () {
 })
 basic.forever(function () {
     if (stop != 1) {
-        hummingbird.setRotationServo(FourPort.One, 100)
+        hummingbird.setRotationServo(FourPort.Two, 100)
     }
 })
 basic.forever(function () {
