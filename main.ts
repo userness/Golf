@@ -1,6 +1,6 @@
+let stop = 0
 hummingbird.startHummingbird()
 music.play(music.tonePlayable(880, music.beat(BeatFraction.Whole)), music.PlaybackMode.InBackground)
-let stop = 0
 basic.forever(function () {
     if (stop != 1) {
         hummingbird.setPositionServo(FourPort.One, 90)
@@ -16,6 +16,10 @@ basic.forever(function () {
 })
 basic.forever(function () {
     if (input.buttonIsPressed(Button.A)) {
-        stop = 1
+        if (stop == 0) {
+            stop = 1
+        } else {
+            stop = 0
+        }
     }
 })
