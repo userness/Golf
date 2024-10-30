@@ -24,6 +24,14 @@ basic.forever(function () {
     }
 })
 basic.forever(function () {
+    if (stop != 1) {
+        hummingbird.setLED(ThreePort.One, 100)
+        basic.pause(100)
+        hummingbird.setLED(ThreePort.One, 0)
+        basic.pause(100)
+    }
+})
+basic.forever(function () {
     hummingbird.setTriLED(
     TwoPort.Two,
     255,
