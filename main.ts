@@ -23,3 +23,33 @@ basic.forever(function () {
         hummingbird.setRotationServo(FourPort.Two, 100)
     }
 })
+basic.forever(function () {
+    hummingbird.setTriLED(
+    TwoPort.Two,
+    255,
+    0,
+    0
+    )
+    hummingbird.setTriLED(
+    TwoPort.One,
+    0,
+    255,
+    0
+    )
+    basic.pause(100)
+    hummingbird.setTriLED(
+    TwoPort.Two,
+    0,
+    255,
+    0
+    )
+    hummingbird.setTriLED(
+    TwoPort.One,
+    255,
+    0,
+    0
+    )
+})
+basic.forever(function () {
+	
+})
