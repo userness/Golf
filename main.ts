@@ -1,7 +1,9 @@
 input.onButtonPressed(Button.A, function () {
     if (stop == 0) {
+        music.play(music.tonePlayable(988, music.beat(BeatFraction.Sixteenth)), music.PlaybackMode.InBackground)
         stop = 1
     } else {
+        music.play(music.tonePlayable(330, music.beat(BeatFraction.Sixteenth)), music.PlaybackMode.InBackground)
         stop = 0
     }
 })
@@ -20,7 +22,9 @@ basic.forever(function () {
 })
 basic.forever(function () {
     if (stop != 1) {
-        hummingbird.setRotationServo(FourPort.Two, 100)
+        hummingbird.setRotationServo(FourPort.Two, 70)
+    } else {
+        hummingbird.setRotationServo(FourPort.Two, 0)
     }
 })
 basic.forever(function () {
@@ -57,7 +61,4 @@ basic.forever(function () {
     0,
     0
     )
-})
-basic.forever(function () {
-	
 })
