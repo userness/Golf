@@ -13,6 +13,9 @@ music.play(music.tonePlayable(880, music.beat(BeatFraction.Whole)), music.Playba
 stop = 0
 basic.showString("Grinch")
 basic.forever(function () {
+	
+})
+basic.forever(function () {
     if (stop != 1) {
         hummingbird.setPositionServo(FourPort.One, 90)
         basic.pause(500)
@@ -23,16 +26,10 @@ basic.forever(function () {
 basic.forever(function () {
     if (stop != 1) {
         hummingbird.setRotationServo(FourPort.Two, 70)
+        hummingbird.setRotationServo(FourPort.Three, 70)
     } else {
         hummingbird.setRotationServo(FourPort.Two, 0)
-    }
-})
-basic.forever(function () {
-    if (stop != 1) {
-        hummingbird.setLED(ThreePort.One, 100)
-        basic.pause(100)
-        hummingbird.setLED(ThreePort.One, 0)
-        basic.pause(100)
+        hummingbird.setRotationServo(FourPort.Three, 0)
     }
 })
 basic.forever(function () {
@@ -61,4 +58,12 @@ basic.forever(function () {
     0,
     0
     )
+})
+basic.forever(function () {
+    if (stop != 1) {
+        hummingbird.setLED(ThreePort.One, 100)
+        basic.pause(100)
+        hummingbird.setLED(ThreePort.One, 0)
+        basic.pause(100)
+    }
 })
